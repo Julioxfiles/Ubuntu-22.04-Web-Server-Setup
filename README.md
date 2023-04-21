@@ -58,6 +58,12 @@ ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
 
 Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
 
+### 7.- (Optional) - Change the name of the ubuntu server to ubuntu-server or any other name.
+````
+$ sudo hostnamectl set-hostname ubuntu-server 
+````
+
+
 ## *** How To Install Nginx on Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
@@ -341,5 +347,17 @@ If MariaDB isn’t running, you can start it with the command:
 $ sudo systemctl start mariadb.
 ````
 
+### *** Download Adminer *** ###
+The easiest way I found to update is to still install it that way, but then use wget to download the latest version of adminer.php. So do something like this:
+
+Go to the adminer director cd /usr/share/adminer
+Download the latest version of adminer:
+````
+sudo wget https://www.adminer.org/latest.php
+````
+Then rename latest.php to adminer.php 
+````
+sudo mv latest.php adminer.php
+````
 
 
