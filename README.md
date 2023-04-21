@@ -209,27 +209,35 @@ Taken from: https://tecadmin.net/how-to-install-php-on-ubuntu-22-04/
 
 ### Update and upgrade your Ubuntu Linux Server.
 
+````
 $ sudo apt update && sudo apt upgrade  // update and upgrade ubuntu
+````
 
 ### Install a few dependencies required by this tutorial with the below-mentioned command:
 
+````
 $ sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https 
+````
 
 ### Add the Ondrej PPA to your system, which contains all versions of PHP packages for Ubuntu systems.
 
+````
 $ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php 
-
 $ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/nginx
+````
 
+## Update again and install php
+````
 $ sudo apt update  // update the Apt package manager cache.
-
 $ sudo apt install php8.1 // Install php. Use the version that you need.
+````
 
 ### Install other extensions
 
+````
 $ sudo apt install php8.1-mysql php8.1-mbstring php8.1-xml php8.1-curl 
-
 $ sudo apt install php-fpm
+````
 
 
 ## *** How To Install MariaDB on Ubuntu 22.04 ***
@@ -237,9 +245,10 @@ Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-mari
 
 ### Step 1 — Installing MariaDB
 
+````
 $ sudo apt update // Update your package index using apt
-
 $ sudo apt install mariadb-server // Install the mariadb-server package using apt.
+````
 
 ### Step 2 — Configuring MariaDB
 
@@ -317,7 +326,9 @@ Output
  
 if MariaDB isn’t running, you can start it with the command:
  
+ ````
 $ sudo systemctl start mariadb.
+ ````
 
 
 
