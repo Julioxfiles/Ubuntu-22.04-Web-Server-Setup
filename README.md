@@ -188,10 +188,10 @@ http {
 ````
 Save and close the file when you are finished.
 
-sudo nginx -t  // test to make sure that there are no syntax errors in any of your Nginx files
+$ sudo nginx -t  // Test to make sure that there are no syntax errors in any of your Nginx files.
 
 If there aren’t any problems, restart Nginx to enable your changes:
-sudo systemctl restart nginx
+$ sudo systemctl restart nginx
 
 Nginx should now be serving your domain name. You can test this by navigating to http://your_domain, where you should see something like this:
 Nginx first server block
