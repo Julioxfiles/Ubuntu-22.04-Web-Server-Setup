@@ -9,13 +9,17 @@ Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setu
 $ ssh root@your_server_ip -i your_ssh_file -p your_port
 
 Step 2 — Creating a new user.
+
 $ adduser your_new_user
 
 Example: $ adduser julio // Add an ubuntu user. This can be your name or just "user" or "admin" or "ubuntu" or any other.
 
 Step 3 — Granting administrative privileges.
+
 usermod -aG sudo your_new_user
+
 Example: $ usermod -aG sudo julio
+
 Note: You can now type sudo before commands to run them with superuser privileges when logged in as your regular user.
 
 Step 4 — Setting Up a Firewall
