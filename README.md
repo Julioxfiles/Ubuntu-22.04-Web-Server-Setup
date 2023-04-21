@@ -397,10 +397,12 @@ https://your_domain/adminer.php and use your dbAdmin and your_db_account that yo
 
 ![image](https://user-images.githubusercontent.com/18542304/233743203-2bc76d2a-690b-4cbc-afed-db3427d8a23f.png)
 
+Note: The connection info used on this screenshot is not the real info, but an example so you can use your own.
+
 Once you have use FileZila to upload your php files. You may need to apply this command again to all your folders and files, except to adminer.php 
 If you can not enter to adminer.php, you may need to download adminer.php again as described above.
 
 ````
-- sudo find /var/www/jwland -type d -exec chmod 2775 {} + (files inherit the folder’s group)
-- sudo find /var/www/jwland -type f -exec chmod 0664 {} + (chmod cannot discriminare folders/files)
+- sudo find /var/www/your_domain -type d -exec chmod 2775 {} + (files inherit the folder’s group)
+- sudo find /var/www/your_domain -type f -exec chmod 0664 {} + (chmod cannot discriminare folders/files)
 ````
