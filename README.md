@@ -128,8 +128,8 @@ Paste in the following configuration block, which is similar to the default, but
 
 /etc/nginx/sites-available/your_domain
 
-\
-server {
+
+\ server {
   \ # Example PHP Nginx FPM config file \
   root /var/www/jwland;
 
@@ -157,8 +157,7 @@ server {
     deny all;
   }
   
-}
-\
+} \
 
 Notice that we’ve updated the root configuration to our new directory, and the server_name to our domain name.
 
