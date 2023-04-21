@@ -212,11 +212,11 @@ Taken from: https://tecadmin.net/how-to-install-php-on-ubuntu-22-04/
 
 $sudo apt update && sudo apt upgrade  // update and upgrade ubuntu
 
-Install a few dependencies required by this tutorial with the below-mentioned command:
+### Install a few dependencies required by this tutorial with the below-mentioned command:
 
 $ sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https 
 
-Add the Ondrej PPA to your system, which contains all versions of PHP packages for Ubuntu systems.
+### Add the Ondrej PPA to your system, which contains all versions of PHP packages for Ubuntu systems.
 
 $ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php 
 
@@ -226,7 +226,7 @@ $ sudo apt update  // update the Apt package manager cache.
 
 $ sudo apt install php8.1 // Install php. Use the version that you need.
 
-Install other extensions
+### Install other extensions
 
 $ sudo apt install php8.1-mysql php8.1-mbstring php8.1-xml php8.1-curl 
 
