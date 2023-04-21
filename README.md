@@ -215,8 +215,8 @@ Now that you know how to manage the Nginx service itself, you should take a few 
 
 Server Logs
 ````
-sudo nano /var/log/nginx/access.log: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
-sudo nano /var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
+sudo nano /var/log/nginx/access.log // Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
+sudo nano /var/log/nginx/error.log // Any Nginx errors will be recorded in this log.
 ````
 
 ## *** Installing PHP ***
