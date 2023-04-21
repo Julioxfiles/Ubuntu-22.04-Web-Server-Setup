@@ -29,7 +29,9 @@ Example: $ adduser julio // Add an ubuntu user. This can be your name or just "u
 usermod -aG sudo your_new_user
 ````
 
+````
 Example: $ usermod -aG sudo julio
+````
 
 Note: You can now type sudo before commands to run them with superuser privileges when logged in as your regular user.
 
@@ -47,10 +49,12 @@ $ ufw status // See that SSH connections are still allowed.
 ### Step 5 - Enabling external access for your regular user on your ubuntu server.
 
 ````
-$ rsync --archive --chown=julio:julio ~/.ssh /home/julio
+$ rsync --archive --chown=your_new_user:your_new_user ~/.ssh /home/your_new_user
 ````
 
+````
 Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
+````
 
 ### 6.- Enter to your server again using the new user:
 
