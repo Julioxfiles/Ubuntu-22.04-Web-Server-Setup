@@ -23,13 +23,16 @@ Example: $ adduser julio // Add an ubuntu user. This can be your name or just "u
 
 ### Step 3 - Granting administrative privileges.
 
+````
 usermod -aG sudo your_new_user
+````
 
 Example: $ usermod -aG sudo julio
 
 Note: You can now type sudo before commands to run them with superuser privileges when logged in as your regular user.
 
 ### Step 4 - Setting Up a Firewall
+````
 $ ufw app list // Examine the list of installed UFW profiles.
 
 $ ufw allow OpenSSH  //  Allows SSH connections.
@@ -43,16 +46,21 @@ $ sudo ufw allow https // This is the same as "sudo ufw allow 443/tcp"
 $ ufw enable // Enable the firewall.
 
 $ ufw status // See that SSH connections are still allowed.
+````
 
 ### Step 5 - Enabling external access for your regular user on your ubuntu server.
 
+````
 $ rsync --archive --chown=sammy:sammy ~/.ssh /home/sammy
+````
 
 Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
 
 ### 6.- Enter to your server again using the new user:
 
+````
 ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
+````
 
 Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
 
@@ -61,9 +69,10 @@ Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-ngin
 
 ### Step 1 - Installing Nginx.
 
+````
 $ sudo apt update
-
 $ sudo apt install nginx
+````
 
 ### Step 2 - Adjusting the Firewall.
 
