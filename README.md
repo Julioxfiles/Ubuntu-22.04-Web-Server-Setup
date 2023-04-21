@@ -366,7 +366,13 @@ GRANT ALL PRIVILEGES ON your_new_db.* TO 'dbAdmin'@'localhost' IDENTIFIED BY 'yo
 FLUSH PRIVILEGES;
 ```` 
 
-### *** Download Adminer *** ###
+# *** Installing Certbot to download an https certificate from letsencrypt. ***
+LetsEncrpt for https page
+https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx 
+- apt-get install certbot python3-certbot-nginx 
+- sudo certbot --nginx -d jwland.org
+
+# *** Download Adminer *** 
 The easiest way I found to update is to still install it that way, but then use wget to download the latest version of adminer.php. So do something like this:
 
 Go to the adminer director cd /usr/share/adminer
@@ -378,5 +384,11 @@ Then rename latest.php to adminer.php
 ````
 sudo mv latest.php adminer.php
 ````
+
+From a web browwer type:
+https://your_domain/adminer.php and use your dbAdmin and your_db_account that you set.
+
+
+
 
 
