@@ -248,6 +248,7 @@ $ sudo mysql_secure_installation // Run this to restrict access to the server
 
 Enter current password for root (enter for none): // Press <Enter>
 
+````
 Switch to unix_socket authentication [Y/n] n
  ... skipping.
 
@@ -278,6 +279,7 @@ All done!  If you've completed all of the above steps, your MariaDB
 installation should now be secure.
 
 Thanks for using MariaDB!
+````
 
 ### Step 3 — Creating an Administrative User to employs Password Authentication
 
@@ -286,13 +288,14 @@ $ sudo mariadb
 
 Then create a new user with root privileges and password-based access. Be sure to change the username and password to match your preferences:
 
-GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
+````
+GRANT ALL ON *.* TO 'dbAdmin'@'localhost' IDENTIFIED BY 'your_new_db_password' WITH GRANT OPTION;
 
-Flush the privileges to ensure that they are saved and available in the current session:
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES; // Flush the privileges to ensure that they are saved and available in the current session:
 
-Following this, exit the MariaDB shell:
-exit
+exit; // Exit the MariaDB shell:
+ 
+````
 
 Finally, let’s test the MariaDB installation.
 
@@ -304,14 +307,18 @@ $ sudo systemctl status mariadb
 
 You’ll receive output that is similar to the following:
 
+````
 Output
 ● mariadb.service - MariaDB 10.5.12 database server
      Loaded: loaded (/lib/systemd/system/mariadb.service; enabled; vendor preset: enabled)
      Active: active (running) since Fri 2022-03-11 22:01:33 UTC; 14min ago
        Docs: man:mariadbd(8)
              https://mariadb.com/kb/en/library/systemd/
-. . .
-If MariaDB isn’t running, you can start it with the command sudo systemctl start mariadb.
+````
+ 
+if MariaDB isn’t running, you can start it with the command:
+ 
+$ sudo systemctl start mariadb.
 
 
 
