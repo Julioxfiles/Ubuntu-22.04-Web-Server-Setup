@@ -118,7 +118,7 @@ Inside, add the following sample HTML:
         <title>Welcome to your_domain!</title>
     </head>
     <body>
-        <h1>Success!  The your_domain server block is working!</h1>
+        <p>Success!  The your_domain server block is working!</p>
     </body>
 </html>
 Save and close the file by pressing Ctrl+X to exit, then when prompted to save, Y and then Enter.
