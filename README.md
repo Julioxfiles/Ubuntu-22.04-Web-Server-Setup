@@ -400,9 +400,10 @@ https://your_domain/adminer.php and use your dbAdmin and your_db_account that yo
 Note: The connection info used on this screenshot is not the real info, but an example so you can use your own.
 
 Once you have use FileZila to upload your php files. You may need to apply this command again to all your folders and files, except to adminer.php 
-If you can not enter to adminer.php, you may need to download adminer.php again as described above.
 
 ````
 - sudo find /var/www/your_domain -type d -exec chmod 2775 {} + (files inherit the folder’s group)
 - sudo find /var/www/your_domain -type f -exec chmod 0664 {} + (chmod cannot discriminare folders/files)
 ````
+
+If you can not enter to adminer.php, you may need to download adminer.php again as described above on the Download Adminer section.
