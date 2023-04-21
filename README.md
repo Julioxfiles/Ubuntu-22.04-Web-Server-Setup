@@ -45,7 +45,7 @@ $ ufw status // See that SSH connections are still allowed.
 ### Step 5 - Enabling external access for your regular user on your ubuntu server.
 
 ````
-$ rsync --archive --chown=sammy:sammy ~/.ssh /home/sammy
+$ rsync --archive --chown=julio:julio ~/.ssh /home/julio
 ````
 
 Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
