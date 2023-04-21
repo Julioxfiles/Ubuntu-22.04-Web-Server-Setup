@@ -177,7 +177,7 @@ Notice that we’ve updated the root configuration to our new directory, and the
 ### Next, let’s enable the file by creating a link from it to the sites-enabled directory, which Nginx reads from during startup.
 
 ````
-$ sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+$ sudo ln -fs /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
 ````
 
 To avoid a possible hash bucket memory problem that can arise from adding additional server names, it is necessary to adjust a single value in the /etc/nginx/nginx.conf file. Open the file:
