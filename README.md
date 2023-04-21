@@ -49,3 +49,133 @@ ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
 
 Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
 
+## How To Install Nginx on Ubuntu 22.04
+Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
+
+### Step 1 – Installing Nginx.
+
+$ sudo apt update
+
+$ sudo apt install nginx
+
+### Step 2 – Adjusting the Firewall.
+
+sudo ufw app list
+
+sudo ufw allow 'Nginx Full' // This will allow ports 80 for http and 443 for https.
+
+sudo ufw status
+
+### Step 3 – Checking your Web Server.
+
+systemctl status nginx
+
+curl -4 icanhazip.com  // it will give you your ip address.
+
+From a browser go to:
+http://your_server_ip
+
+### Step 4 – Managing the Nginx Process.
+Now that you have your web server up and running, let’s review some basic management commands.
+
+To stop your web server, type:
+sudo systemctl stop nginx
+
+To start the web server when it is stopped, type:
+$ sudo systemctl start nginx
+
+To stop and then start the service again, type:
+$ sudo systemctl restart nginx
+
+If you are only making configuration changes, Nginx can often reload without dropping connections. To do this, type:
+$ sudo systemctl reload nginx
+
+By default, Nginx is configured to start automatically when the server boots. If this is not what you want, you can disable this behavior by typing:
+$ sudo systemctl disable nginx
+
+To re-enable the service to start up at boot, you can type:
+$ sudo systemctl enable nginx
+
+### Step 5 – Setting Up Server Blocks.
+
+$ sudo mkdir -p /var/www/your_domain/html // Create the directory for your_domain as follows
+
+$ sudo chown -R www-data:www-data /var/www/your_domain // assign ownership of the directory with the $USER environment variable.
+
+$ sudo chmod -R 755 /var/www/your_domain  // Set permissions
+
+$ nano /var/www/your_domain/index.html // Create a sample index.html page using nano.
+
+Inside, add the following sample HTML:
+
+/var/www/your_domain/html/index.html
+<html>
+    <head>
+        <title>Welcome to your_domain!</title>
+    </head>
+    <body>
+        <h1>Success!  The your_domain server block is working!</h1>
+    </body>
+</html>
+Save and close the file by pressing Ctrl+X to exit, then when prompted to save, Y and then Enter.
+
+sudo nano /etc/nginx/sites-available/your_domain  // it’s necessary to create a server block
+Paste in the following configuration block, which is similar to the default, but updated for our new directory and domain name:
+
+/etc/nginx/sites-available/your_domain
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/your_domain/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name your_domain www.your_domain;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+Notice that we’ve updated the root configuration to our new directory, and the server_name to our domain name.
+
+Next, let’s enable the file by creating a link from it to the sites-enabled directory, which Nginx reads from during startup.
+
+$ sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+
+To avoid a possible hash bucket memory problem that can arise from adding additional server names, it is necessary to adjust a single value in the /etc/nginx/nginx.conf file. Open the file:
+
+$ sudo nano /etc/nginx/nginx.conf
+
+Find the server_names_hash_bucket_size directive and remove the # symbol to uncomment the line. If you are using nano, you can quickly search for words in the file by pressing CTRL and w.
+
+Note: Commenting out lines of code – usually by putting # at the start of a line – is another way of disabling them without needing to actually delete them. Many configuration files ship with multiple options commented out so that they can be enabled or disabled, by toggling them between active code and documentation.
+
+/etc/nginx/nginx.conf
+...
+http {
+    ...
+    server_names_hash_bucket_size 64;
+    ...
+}
+...
+Save and close the file when you are finished.
+
+sudo nginx -t  // test to make sure that there are no syntax errors in any of your Nginx files
+
+If there aren’t any problems, restart Nginx to enable your changes:
+sudo systemctl restart nginx
+
+Nginx should now be serving your domain name. You can test this by navigating to http://your_domain, where you should see something like this:
+Nginx first server block
+
+### Step 6 – Getting Familiar with Important Nginx Files and Directories
+Now that you know how to manage the Nginx service itself, you should take a few minutes to familiarize yourself with a few important directories and files.
+
+Server Logs
+
+/var/log/nginx/access.log: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
+
+/var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
+
+
+
