@@ -6,18 +6,18 @@ We start from the idea that you already have an ssh file private key to connect 
 ## *** Initial Server Setup with Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04
 
-### Step 1 — Using your_ssh_file (private key) to log in as root on your ubuntu server.
+### Step 1 - Using your_ssh_file (private key) to log in as root on your ubuntu server.
 $ ssh root@your_server_ip -i your_ssh_file -p your_port
 
 Example: $ ssh root@68.227.102.147 -i my_private_key.ssh -p 22
 
-### Step 2 — Creating a new user.
+### Step 2 - Creating a new user.
 
 $ adduser your_new_user
 
 Example: $ adduser julio // Add an ubuntu user. This can be your name or just "user" or "admin" or "ubuntu" or any other.
 
-### Step 3 — Granting administrative privileges.
+### Step 3 - Granting administrative privileges.
 
 usermod -aG sudo your_new_user
 
@@ -25,7 +25,7 @@ Example: $ usermod -aG sudo julio
 
 Note: You can now type sudo before commands to run them with superuser privileges when logged in as your regular user.
 
-### Step 4 — Setting Up a Firewall
+### Step 4 - Setting Up a Firewall
 $ ufw app list // Examine the list of installed UFW profiles.
 
 $ ufw allow OpenSSH  //  Allows SSH connections.
@@ -40,7 +40,7 @@ $ ufw enable // Enable the firewall.
 
 $ ufw status // See that SSH connections are still allowed.
 
-### Step 5 — Enabling external access for your regular user on your ubuntu server.
+### Step 5 - Enabling external access for your regular user on your ubuntu server.
 
 $ rsync --archive --chown=sammy:sammy ~/.ssh /home/sammy
 
@@ -55,13 +55,13 @@ Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
 ## *** How To Install Nginx on Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
-### Step 1 – Installing Nginx.
+### Step 1 - Installing Nginx.
 
 $ sudo apt update
 
 $ sudo apt install nginx
 
-### Step 2 – Adjusting the Firewall.
+### Step 2 - Adjusting the Firewall.
 
 sudo ufw app list
 
@@ -69,7 +69,7 @@ sudo ufw allow 'Nginx Full' // This will allow ports 80 for http and 443 for htt
 
 sudo ufw status
 
-### Step 3 – Checking your Web Server.
+### Step 3 - Checking your Web Server.
 
 systemctl status nginx
 
@@ -78,7 +78,7 @@ curl -4 icanhazip.com  // it will give you your ip address.
 From a browser go to:
 http://your_server_ip
 
-### Step 4 – Managing the Nginx Process.
+### Step 4 - Managing the Nginx Process.
 Now that you have your web server up and running, let’s review some basic management commands.
 
 To stop your web server, type:
@@ -99,7 +99,7 @@ $ sudo systemctl disable nginx
 To re-enable the service to start up at boot, you can type:
 $ sudo systemctl enable nginx
 
-### Step 5 – Setting Up Server Blocks.
+### Step 5 - Setting Up Server Blocks.
 
 $ sudo mkdir -p /var/www/your_domain // Create the directory for your_domain. 
 
