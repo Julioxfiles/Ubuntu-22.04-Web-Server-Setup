@@ -79,7 +79,7 @@ http://your_server_ip
 Now that you have your web server up and running, let’s review some basic management commands.
 
 To stop your web server, type:
-sudo systemctl stop nginx
+$ sudo systemctl stop nginx
 
 To start the web server when it is stopped, type:
 $ sudo systemctl start nginx
