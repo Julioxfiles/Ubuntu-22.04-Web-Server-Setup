@@ -50,7 +50,7 @@ ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
 
 Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
 
-## How To Install Nginx on Ubuntu 22.04
+## *** How To Install Nginx on Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04
 
 ### Step 1 – Installing Nginx.
@@ -203,7 +203,7 @@ Server Logs
 
 /var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
 
-## How To Install MariaDB on Ubuntu 22.04
+## *** How To Install MariaDB on Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-22-04
 
 ### Step 1 — Installing MariaDB
