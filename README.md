@@ -131,7 +131,7 @@ Paste in the following configuration block, which is similar to the default, but
 ````
 server {
   # Example PHP Nginx FPM config file 
-  root /var/www/jwland;
+  root /var/www/your_domain;
 
   # Add index.php to setup Nginx, PHP & PHP-FPM config 
   index index.php index.html index.htm index.nginx-debian.html;
