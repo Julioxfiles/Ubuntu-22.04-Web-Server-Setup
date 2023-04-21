@@ -428,7 +428,7 @@ https://your_domain/adminer.php and use your dbAdmin and your_db_account that yo
 
 Note: The connection info used on this screenshot is not the real info, but an example so you can use your own.
 
-Once you have use FileZila to upload your php files. You may need to apply this command again to all your folders and files, except to adminer.php 
+Once you have use FileZila to upload your php files to /var/www/your_domain you may need to apply this command again to all your folders and files, except to adminer.php 
 
 ````
 - sudo find /var/www/your_domain -type d -exec chmod 2775 {} + (files inherit the folder’s group)
