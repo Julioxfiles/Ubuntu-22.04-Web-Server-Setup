@@ -203,5 +203,85 @@ Server Logs
 
 /var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
 
+## How To Install MariaDB on Ubuntu 22.04
+Taken from: https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-22-04
+
+### Step 1 — Installing MariaDB
+
+$ sudo apt update // Update your package index using apt
+
+$ sudo apt install mariadb-server // Install the mariadb-server package using apt.
+
+### Step 2 — Configuring MariaDB
+
+$ sudo mysql_secure_installation // Run this to restrict access to the server
+
+Enter current password for root (enter for none): // Press <Enter>
+
+Switch to unix_socket authentication [Y/n] n
+ ... skipping.
+
+Change the root password? [Y/n] n
+ ... skipping.
+
+Remove anonymous users? [Y/n] y
+ ... Success!
+
+Disallow root login remotely? [Y/n] y
+ ... Success!
+
+Remove test database and access to it? [Y/n] y
+ - Dropping test database...
+ ... Success!
+ - Removing privileges on test database...
+ ... Success!
+
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+
+Reload privilege tables now? [Y/n] y
+ ... Success!
+
+Cleaning up...
+
+All done!  If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+
+### Step 3 — (Optional) Creating an Administrative User that Employs Password Authentication
+
+We will create a new account called admin with the same capabilities as the root account, but configured for password authentication. Open up the MariaDB prompt from your terminal:
+$ sudo mariadb
+
+Then create a new user with root privileges and password-based access. Be sure to change the username and password to match your preferences:
+
+GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
+
+Flush the privileges to ensure that they are saved and available in the current session:
+FLUSH PRIVILEGES;
+
+Following this, exit the MariaDB shell:
+exit
+
+Finally, let’s test the MariaDB installation.
+
+### Step 4 — Testing MariaDB
+
+When installed from the default repositories, MariaDB will start running automatically. To test this, check its status.
+ 
+$ sudo systemctl status mariadb
+
+You’ll receive output that is similar to the following:
+
+Output
+● mariadb.service - MariaDB 10.5.12 database server
+     Loaded: loaded (/lib/systemd/system/mariadb.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2022-03-11 22:01:33 UTC; 14min ago
+       Docs: man:mariadbd(8)
+             https://mariadb.com/kb/en/library/systemd/
+. . .
+If MariaDB isn’t running, you can start it with the command sudo systemctl start mariadb.
+
 
 
