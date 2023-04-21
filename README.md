@@ -8,13 +8,13 @@ Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setu
 ### Step 1 — Using your_ssh_file (private key) to log in as root on your ubuntu server.
 $ ssh root@your_server_ip -i your_ssh_file -p your_port
 
-Step 2 — Creating a new user.
+### Step 2 — Creating a new user.
 
 $ adduser your_new_user
 
 Example: $ adduser julio // Add an ubuntu user. This can be your name or just "user" or "admin" or "ubuntu" or any other.
 
-Step 3 — Granting administrative privileges.
+##5 Step 3 — Granting administrative privileges.
 
 usermod -aG sudo your_new_user
 
@@ -22,7 +22,7 @@ Example: $ usermod -aG sudo julio
 
 Note: You can now type sudo before commands to run them with superuser privileges when logged in as your regular user.
 
-Step 4 — Setting Up a Firewall
+### Step 4 — Setting Up a Firewall
 $ ufw app list // examine the list of installed UFW profiles
 $ ufw allow OpenSSH  //  Allows SSH connections.
 $ ufw allow 2221/tcp // We will use 2221 as port to connect by ssh. The default port is 22.
@@ -31,22 +31,14 @@ $ sudo ufw allow https // This is the same as "ufw allow 443/tcp"
 $ ufw enable // Enable the firewall
 $ ufw status // See that SSH connections are still allowed
 
-Step 5 — Enabling external access for your regular user.
+### Step 5 — Enabling external access for your regular user.
 
-If the root Account Uses SSH Key Authentication
-
-To log in as your regular user with an SSH key, you must add a copy of your local public key to your new user’s ~/.ssh/authorized_keys file.
-
-Since your public key is already in the root account’s ~/.ssh/authorized_keys file on the server, you can copy that file and directory structure to your new user account using your current session.
-
-The simplest way to copy the files with the correct ownership and permissions is with the rsync command. This command will copy the root user’s .ssh directory, preserve the permissions, and modify the file owners, all in a single command. Make sure to change the highlighted portions of the command below to match your regular user’s name:
-
-Go to the home directory of your root user account and run this, change sammy for your new user.
 rsync --archive --chown=sammy:sammy ~/.ssh /home/sammy
+
 Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
 
-6.- Enter to your server again using the new user:
+### 6.- Enter to your server again using the new user:
 
- ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
+ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
 Example: ssh -i digital_ocean_ssh.txt julio@64.226.101.144 -p 22
 
