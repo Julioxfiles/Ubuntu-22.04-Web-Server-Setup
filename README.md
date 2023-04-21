@@ -107,14 +107,16 @@ $ sudo chown -R www-data:www-data /var/www/your_domain // Assign ownership of th
 Setting permissions for yuor folders and files. 
 You must use the + symbol as the end in the following two commands:
 
+````
 $ sudo find /var/www/your_domain -type d -exec chmod 2775 {} +  // files inherit the folder’s group
 $ sudo find /var/www/your_domain -type f -exec chmod 0664 {} +  // chmod cannot discriminare folders/files
+````
 
-$ nano /var/www/your_domain/index.html // Create a sample index.html page using nano.
+### Create a sample index.html page using nano.
+$ sudo nano /var/www/your_domain/index.html 
 
 Inside, add the following sample HTML:
 
-/var/www/your_domain/html/index.html
 ````
 <html>
     <head>
@@ -127,7 +129,8 @@ Inside, add the following sample HTML:
 ````
 Save and close the file by pressing Ctrl+X to exit, then when prompted to save, Y and then Enter.
 
-$ sudo nano /etc/nginx/sites-available/your_domain // Create a file in this path using your_domain as file.
+### Create a block file in this path using your_domain as file.
+$ sudo nano /etc/nginx/sites-available/your_domain 
 
 Now paste in the following configuration block, which is similar to the default:
 
@@ -165,13 +168,17 @@ server {
 
 Notice that we’ve updated the root configuration to our new directory, and the server_name to our domain name.
 
-Next, let’s enable the file by creating a link from it to the sites-enabled directory, which Nginx reads from during startup.
+### Next, let’s enable the file by creating a link from it to the sites-enabled directory, which Nginx reads from during startup.
 
+````
 $ sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+````
 
 To avoid a possible hash bucket memory problem that can arise from adding additional server names, it is necessary to adjust a single value in the /etc/nginx/nginx.conf file. Open the file:
 
+````
 $ sudo nano /etc/nginx/nginx.conf
+````
 
 Find the server_names_hash_bucket_size directive and remove the # symbol to uncomment the line. If you are using nano, you can quickly search for words in the file by pressing CTRL and w.
 
@@ -189,8 +196,10 @@ Save and close the file when you are finished.
 
 $ sudo nginx -t  // Test to make sure that there are no syntax errors in any of your Nginx files.
 
-If there aren’t any problems, restart Nginx to enable your changes:
+### If there aren’t any problems, restart Nginx to enable your changes:
+````
 $ sudo systemctl restart nginx
+````
 
 Nginx should now be serving your domain name. You can test this by navigating to http://your_domain, where you should see something like this:
 Nginx first server block
@@ -199,10 +208,10 @@ Nginx first server block
 Now that you know how to manage the Nginx service itself, you should take a few minutes to familiarize yourself with a few important directories and files.
 
 Server Logs
-
-/var/log/nginx/access.log: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
-
-/var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
+````
+sudo nano /var/log/nginx/access.log: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
+sudo nano /var/log/nginx/error.log: Any Nginx errors will be recorded in this log.
+````
 
 ## *** Installing PHP ***
 Taken from: https://tecadmin.net/how-to-install-php-on-ubuntu-22-04/ 
@@ -252,11 +261,11 @@ $ sudo apt install mariadb-server // Install the mariadb-server package using ap
 
 ### Step 2 — Configuring MariaDB
 
+````
 $ sudo mysql_secure_installation // Run this to restrict access to the server
 
 Enter current password for root (enter for none): // Press <Enter>
 
-````
 Switch to unix_socket authentication [Y/n] n
  ... skipping.
 
@@ -311,7 +320,9 @@ Finally, let’s test the MariaDB installation.
 
 When installed from the default repositories, MariaDB will start running automatically. To test this, check its status.
  
+ ````
 $ sudo systemctl status mariadb
+````
 
 You’ll receive output that is similar to the following:
 
