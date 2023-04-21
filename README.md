@@ -98,11 +98,15 @@ $ sudo systemctl enable nginx
 
 ### Step 5 – Setting Up Server Blocks.
 
-$ sudo mkdir -p /var/www/your_domain/html // Create the directory for your_domain as follows
+$ sudo mkdir -p /var/www/your_domain // Create the directory for your_domain. 
 
-$ sudo chown -R www-data:www-data /var/www/your_domain // assign ownership of the directory with the $USER environment variable.
+$ sudo chown -R www-data:www-data /var/www/your_domain // Assign ownership of the directory so php can be used.
 
-$ sudo chmod -R 755 /var/www/your_domain  // Set permissions
+Setting permissions for yuor folders and files. 
+You must use the + symbol as the end in the following two commands:
+
+$ sudo find /var/www/your_domain -type d -exec chmod 2775 {} +  // files inherit the folder’s group
+$ sudo find /var/www/your_domain -type f -exec chmod 0664 {} +  // chmod cannot discriminare folders/files
 
 $ nano /var/www/your_domain/index.html // Create a sample index.html page using nano.
 
@@ -124,17 +128,34 @@ Paste in the following configuration block, which is similar to the default, but
 
 /etc/nginx/sites-available/your_domain
 server {
-        listen 80;
-        listen [::]:80;
+  # Example PHP Nginx FPM config file
+  root /var/www/jwland;
 
-        root /var/www/your_domain/html;
-        index index.html index.htm index.nginx-debian.html;
+  # Add index.php to setup Nginx, PHP & PHP-FPM config
+  index index.php index.html index.htm index.nginx-debian.html;
 
-        server_name your_domain www.your_domain;
+  server_name _;
 
-        location / {
-                try_files $uri $uri/ =404;
-        }
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  # pass PHP scripts on Nginx to FastCGI (PHP-FPM) server
+  location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+
+    # Nginx php-fpm sock config:
+    fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+    # Nginx php-cgi config :
+    # Nginx PHP fastcgi_pass 127.0.0.1:9000;
+  }
+
+  # deny access to Apache .htaccess on Nginx with PHP,
+  # if Apache and Nginx document roots concur
+  location ~ /\.ht {
+    deny all;
+  }
+  
 }
 Notice that we’ve updated the root configuration to our new directory, and the server_name to our domain name.
 
