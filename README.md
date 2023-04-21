@@ -249,7 +249,7 @@ installation should now be secure.
 
 Thanks for using MariaDB!
 
-### Step 3 — (Optional) Creating an Administrative User that Employs Password Authentication
+### Step 3 — Creating an Administrative User to employs Password Authentication
 
 We will create a new account called admin with the same capabilities as the root account, but configured for password authentication. Open up the MariaDB prompt from your terminal:
 $ sudo mariadb
