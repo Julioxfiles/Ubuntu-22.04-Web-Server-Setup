@@ -29,9 +29,9 @@ $ ufw allow OpenSSH  //  Allows SSH connections.
 
 $ ufw allow 22/tcp // We will use 22 as port to connect by ssh. The default port is 22.
 
-$ sudo ufw allow http // This is the same as "ufw allow 80/tcp"
+$ sudo ufw allow http // This is the same as "sudo ufw allow 80/tcp"
 
-$ sudo ufw allow https // This is the same as "ufw allow 443/tcp"
+$ sudo ufw allow https // This is the same as "sudo ufw allow 443/tcp"
 
 $ ufw enable // Enable the firewall
 
