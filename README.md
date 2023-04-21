@@ -312,7 +312,7 @@ $ sudo mariadb
 Then create a new user with root privileges and password-based access. Be sure to change the username and password to match your preferences:
 
 ````
-GRANT ALL ON *.* TO 'dbAdmin'@'localhost' IDENTIFIED BY 'your_new_db_password' WITH GRANT OPTION;
+GRANT ALL ON *.* TO 'dbAdmin'@'localhost' IDENTIFIED BY 'your_db_password' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES; // Flush the privileges to ensure that they are saved and available in the current session:
 
@@ -346,6 +346,22 @@ If MariaDB isn’t running, you can start it with the command:
 ````
 $ sudo systemctl start mariadb.
 ````
+
+
+## Step 5 You may need to create a mariadb DATABASE to store the data of your php proyect or web site.
+
+Enter to mysql (mariaDB) Your dbAdmin password may be asked.
+
+````
+mysql -u admin -p 
+
+CREATE DATABASE your_new_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; 
+FLUSH PRIVILEGES;
+
+GRANT ALL PRIVILEGES ON your_new_db.* TO 'dbAdmin'@'localhost' IDENTIFIED BY 'your_db_password'; 
+
+FLUSH PRIVILEGES;
+```` 
 
 ### *** Download Adminer *** ###
 The easiest way I found to update is to still install it that way, but then use wget to download the latest version of adminer.php. So do something like this:
