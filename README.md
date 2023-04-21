@@ -128,12 +128,12 @@ Paste in the following configuration block, which is similar to the default, but
 
 /etc/nginx/sites-available/your_domain
 
-
-\ server {
-  \ # Example PHP Nginx FPM config file \
+````
+server {
+  # Example PHP Nginx FPM config file 
   root /var/www/jwland;
 
-  \ # Add index.php to setup Nginx, PHP & PHP-FPM config \
+  # Add index.php to setup Nginx, PHP & PHP-FPM config 
   index index.php index.html index.htm index.nginx-debian.html;
 
   server_name _;
@@ -142,7 +142,7 @@ Paste in the following configuration block, which is similar to the default, but
     try_files $uri $uri/ =404;
   }
 
-  \ # pass PHP scripts on Nginx to FastCGI (PHP-FPM) server \
+  # pass PHP scripts on Nginx to FastCGI (PHP-FPM) server 
   location ~ \.php$ {
     include snippets/fastcgi-php.conf;
 
@@ -152,12 +152,13 @@ Paste in the following configuration block, which is similar to the default, but
     # Nginx PHP fastcgi_pass 127.0.0.1:9000;
   }
 
-  \ # deny access to Apache .htaccess on Nginx with PHP, if Apache and Nginx document roots concur \
+  # deny access to Apache .htaccess on Nginx with PHP, if Apache and Nginx document roots concur 
   location ~ /\.ht {
     deny all;
   }
   
-} \
+} 
+````
 
 Notice that we’ve updated the root configuration to our new directory, and the server_name to our domain name.
 
