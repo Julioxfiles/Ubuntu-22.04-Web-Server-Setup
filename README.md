@@ -113,6 +113,7 @@ $ nano /var/www/your_domain/index.html // Create a sample index.html page using 
 Inside, add the following sample HTML:
 
 /var/www/your_domain/html/index.html
+````
 <html>
     <head>
         <title>Welcome to your_domain!</title>
@@ -121,6 +122,7 @@ Inside, add the following sample HTML:
         <p>Success!  The your_domain server block is working!</p>
     </body>
 </html>
+````
 Save and close the file by pressing Ctrl+X to exit, then when prompted to save, Y and then Enter.
 
 sudo nano /etc/nginx/sites-available/your_domain  // it’s necessary to create a server block
@@ -175,13 +177,13 @@ Find the server_names_hash_bucket_size directive and remove the # symbol to unco
 Note: Commenting out lines of code – usually by putting # at the start of a line – is another way of disabling them without needing to actually delete them. Many configuration files ship with multiple options commented out so that they can be enabled or disabled, by toggling them between active code and documentation.
 
 /etc/nginx/nginx.conf
-...
+````
 http {
     ...
     server_names_hash_bucket_size 64;
     ...
 }
-...
+````
 Save and close the file when you are finished.
 
 sudo nginx -t  // test to make sure that there are no syntax errors in any of your Nginx files
