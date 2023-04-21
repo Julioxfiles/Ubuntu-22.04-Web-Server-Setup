@@ -252,7 +252,7 @@ $ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php
 $ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/nginx
 ````
 
-## Update again and install php
+### Update again and install php
 ````
 $ sudo apt update  // update the Apt package manager cache.
 $ sudo apt install php8.1 // Install php. Use the version that you need.
