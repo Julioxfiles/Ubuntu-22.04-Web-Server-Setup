@@ -9,6 +9,8 @@ Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setu
 ### Step 1 — Using your_ssh_file (private key) to log in as root on your ubuntu server.
 $ ssh root@your_server_ip -i your_ssh_file -p your_port
 
+Example: $ ssh root@68.227.102.147 -i private_key.ssh -p 22
+
 ### Step 2 — Creating a new user.
 
 $ adduser your_new_user
@@ -28,7 +30,7 @@ $ ufw app list // Examine the list of installed UFW profiles.
 
 $ ufw allow OpenSSH  //  Allows SSH connections.
 
-$ ufw allow 22/tcp // We will use 22 as port to connect by ssh. The default port is 22.
+$ ufw allow 22/tcp // We will use 22 as port to connect by ssh. The default port is 22. You may use other like 2221 or similar.
 
 $ sudo ufw allow http // This is the same as "sudo ufw allow 80/tcp"
 
