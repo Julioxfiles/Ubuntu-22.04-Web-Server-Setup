@@ -13,7 +13,9 @@ Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setu
 $ ssh root@your_server_ip -i your_ssh_file -p your_port
 ````
 
+````
 Example: $ ssh root@68.227.102.147 -i my_private_key.ssh -p 22
+````
 
 ### Step 2 - Creating a new user.
 
@@ -26,7 +28,7 @@ Example: $ adduser julio // Add an ubuntu user. This can be your name or just "u
 ### Step 3 - Granting administrative privileges.
 
 ````
-usermod -aG sudo your_new_user
+$ usermod -aG sudo your_new_user
 ````
 
 ````
