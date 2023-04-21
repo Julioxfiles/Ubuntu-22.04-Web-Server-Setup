@@ -47,5 +47,5 @@ Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
 
 ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
 
-Example: ssh julio@64.226.101.144 -i your_ssh_file -p 22
+Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
 
