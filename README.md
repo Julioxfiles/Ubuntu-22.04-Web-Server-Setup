@@ -1,4 +1,5 @@
 # Ubuntu-22.04-Web-Server-Setup
+## Using nginx, php, mariadb, certbot and adminer.php to setup a web server.
 Describes the linux commands needed to set up a web server on ubuntu 22.04
 We start from the idea that you already have an ssh file private key to connect to the ubuntu server where you will carry out the installation.
  
