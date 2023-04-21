@@ -390,8 +390,10 @@ https://your_domain/adminer.php and use your dbAdmin and your_db_account that yo
 
 # *** Upload your php files to your server
 
-1.- Install on your Windows PC the FileZila Client app
-2.- Setup your ftp server
+1.- Install on your Windows PC the FileZila Client app from:
+    https://filezilla-project.org/download.php?platform=win64
+    
+2.- Setup your ftp server with your own connection server info as the following example:
 
 ![image](https://user-images.githubusercontent.com/18542304/233743203-2bc76d2a-690b-4cbc-afed-db3427d8a23f.png)
 
