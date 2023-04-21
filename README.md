@@ -10,6 +10,7 @@ $ ssh root@your_server_ip -i your_ssh_file -p your_port
 
 Step 2 — Creating a new user.
 $ adduser your_new_user
+
 Example: $ adduser julio // Add an ubuntu user. This can be your name or just "user" or "admin" or "ubuntu" or any other.
 
 Step 3 — Granting administrative privileges.
