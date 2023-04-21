@@ -380,7 +380,7 @@ Download the latest version of adminer:
 ````
 sudo wget https://www.adminer.org/latest.php
 ````
-Then rename latest.php to adminer.php 
+Then rename latest.php to /var/www/your_domain/adminer.php 
 ````
 sudo mv latest.php adminer.php
 ````
@@ -388,7 +388,16 @@ sudo mv latest.php adminer.php
 From a web browwer type:
 https://your_domain/adminer.php and use your dbAdmin and your_db_account that you set.
 
+# *** Upload your php files to your server
 
+1.- Install on your Windows PC the FileZila Client app
+2.- Setup your ftp server
+![image](https://user-images.githubusercontent.com/18542304/233742377-b2c526e6-bb59-4819-a581-d504641364ef.png)
 
+Once you have use FileZila to upload your php files. You may need to apply this command again to all your folders and files, except to adminer.php 
+If you can not enter to adminer.php, you may need to download adminer.php again as described above.
 
-
+````
+- sudo find /var/www/jwland -type d -exec chmod 2775 {} + (files inherit the folder’s group)
+- sudo find /var/www/jwland -type f -exec chmod 0664 {} + (chmod cannot discriminare folders/files)
+````
