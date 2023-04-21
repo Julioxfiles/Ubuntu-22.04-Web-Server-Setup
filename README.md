@@ -320,7 +320,7 @@ Finally, let’s test the MariaDB installation.
 
 When installed from the default repositories, MariaDB will start running automatically. To test this, check its status.
  
- ````
+````
 $ sudo systemctl status mariadb
 ````
 
@@ -335,11 +335,11 @@ Output
              https://mariadb.com/kb/en/library/systemd/
 ````
  
-if MariaDB isn’t running, you can start it with the command:
+If MariaDB isn’t running, you can start it with the command:
  
- ````
+````
 $ sudo systemctl start mariadb.
- ````
+````
 
 
 
