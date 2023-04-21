@@ -63,10 +63,10 @@ Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
 ### 6.- Enter to your server again using the new user:
 
 ````
-ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
+ssh your_new_user@your_ip_address -i your_ssh_file -p your_port
 ````
 ````
-Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
+Example: ssh julio@68.227.102.147 -i my_private_key.ssh  -p 22
 ````
 
 ### 7.- (Optional) - Change the name of the ubuntu server to ubuntu-server or any other name.
