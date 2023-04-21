@@ -306,10 +306,13 @@ Thanks for using MariaDB!
 
 ### Step 3 — Creating an Administrative User to employs Password Authentication
 
-We will create a new account called admin with the same capabilities as the root account, but configured for password authentication. Open up the MariaDB prompt from your terminal:
-$ sudo mariadb
+We will create a new mariadb account called dbAdmin with the same capabilities as the root account, but configured for password authentication. Open up the MariaDB prompt from your terminal:
 
-Then create a new user with root privileges and password-based access. Be sure to change the username and password to match your preferences:
+````
+$ sudo mariadb
+````
+
+Then create a new user called dbAdmin with root privileges and password-based access do the following. Be sure to change your_db_password for a strong password. This will be set as your password.
 
 ````
 GRANT ALL ON *.* TO 'dbAdmin'@'localhost' IDENTIFIED BY 'your_db_password' WITH GRANT OPTION;
@@ -350,7 +353,7 @@ $ sudo systemctl start mariadb.
 
 ### Step 5 - Create a mariadb DATABASE to store the data of your php proyect or web site.
 
-Enter to mysql (mariaDB) Your dbAdmin password may be asked.
+Enter to mysql (mariaDB). Your dbAdmin password may be asked. On the next GRANT ALL PRIVILEGES command you must use the password that you already set for the dbAdmin account that you create on the step 4.
 
 ````
 mysql -u admin -p 
