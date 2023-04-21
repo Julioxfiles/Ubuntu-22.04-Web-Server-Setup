@@ -367,10 +367,28 @@ FLUSH PRIVILEGES;
 ```` 
 
 # *** Installing Certbot to download an https certificate from letsencrypt. ***
-LetsEncrpt for https page
-https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx 
-- apt-get install certbot python3-certbot-nginx 
-- sudo certbot --nginx -d jwland.org
+Taken from https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx 
+
+```` 
+$ apt-get install certbot python3-certbot-nginx 
+$ sudo certbot --nginx -d your_domain
+```` 
+After following a few questions you may have been success. 
+
+The following lines should be added to your nginx block file on /etc/nginx/sites-available/your_domain
+
+```` 
+$ sudo nano /etc/nginx/sites-available/your_domain
+```` 
+
+```` 
+  listen [::]:443 ssl ipv6only=on; # managed by Certbot
+  listen 443 ssl; # managed by Certbot
+  ssl_certificate /etc/letsencrypt/live/your_domain/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/your_domain/privkey.pem; # managed by Certbot
+  include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+````   
 
 # *** Download Adminer *** 
 The easiest way I found to update is to still install it that way, but then use wget to download the latest version of adminer.php. So do something like this:
