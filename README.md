@@ -9,7 +9,7 @@ Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setu
 ### Step 1 — Using your_ssh_file (private key) to log in as root on your ubuntu server.
 $ ssh root@your_server_ip -i your_ssh_file -p your_port
 
-Example: $ ssh root@68.227.102.147 -i private_key.ssh -p 22
+Example: $ ssh root@68.227.102.147 -i my_private_key.ssh -p 22
 
 ### Step 2 — Creating a new user.
 
