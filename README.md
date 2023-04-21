@@ -3,7 +3,7 @@
 Describes the linux commands needed to set up a web server on ubuntu 22.04
 We start from the idea that you already have an ssh file private key to connect to the ubuntu server where you will carry out the installation.
  
-## Initial Server Setup with Ubuntu 22.04
+## *** Initial Server Setup with Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04
 
 ### Step 1 — Using your_ssh_file (private key) to log in as root on your ubuntu server.
