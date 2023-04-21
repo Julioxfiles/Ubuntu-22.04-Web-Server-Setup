@@ -65,8 +65,9 @@ Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
 ````
 ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
 ````
-
+````
 Example: ssh julio@68.227.102.147 -i your_ssh_file -p 22
+````
 
 ### 7.- (Optional) - Change the name of the ubuntu server to ubuntu-server or any other name.
 ````
