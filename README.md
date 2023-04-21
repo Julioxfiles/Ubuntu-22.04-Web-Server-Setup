@@ -14,7 +14,7 @@ $ adduser your_new_user
 
 Example: $ adduser julio // Add an ubuntu user. This can be your name or just "user" or "admin" or "ubuntu" or any other.
 
-##5 Step 3 — Granting administrative privileges.
+### Step 3 — Granting administrative privileges.
 
 usermod -aG sudo your_new_user
 
