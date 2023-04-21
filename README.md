@@ -23,7 +23,9 @@ Example: $ ssh root@68.227.102.147 -i my_private_key.ssh -p 22
 $ adduser your_new_user
 ````
 
+````
 Example: $ adduser julio // Add an ubuntu user. This can be your name or just "user" or "admin" or "ubuntu" or any other.
+````
 
 ### Step 3 - Granting administrative privileges.
 
