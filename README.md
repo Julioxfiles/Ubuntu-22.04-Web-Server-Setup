@@ -210,7 +210,7 @@ Taken from: https://tecadmin.net/how-to-install-php-on-ubuntu-22-04/
 
 ### Update and upgrade your Ubuntu Linux Server.
 
-$sudo apt update && sudo apt upgrade  // update and upgrade ubuntu
+$ sudo apt update && sudo apt upgrade  // update and upgrade ubuntu
 
 ### Install a few dependencies required by this tutorial with the below-mentioned command:
 
