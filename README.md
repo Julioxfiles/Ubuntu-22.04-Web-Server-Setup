@@ -392,7 +392,8 @@ https://your_domain/adminer.php and use your dbAdmin and your_db_account that yo
 
 1.- Install on your Windows PC the FileZila Client app
 2.- Setup your ftp server
-![image](https://user-images.githubusercontent.com/18542304/233742377-b2c526e6-bb59-4819-a581-d504641364ef.png)
+
+![image](https://user-images.githubusercontent.com/18542304/233743203-2bc76d2a-690b-4cbc-afed-db3427d8a23f.png)
 
 Once you have use FileZila to upload your php files. You may need to apply this command again to all your folders and files, except to adminer.php 
 If you can not enter to adminer.php, you may need to download adminer.php again as described above.
