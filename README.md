@@ -34,17 +34,11 @@ Note: You can now type sudo before commands to run them with superuser privilege
 ### Step 4 - Setting Up a Firewall
 ````
 $ ufw app list // Examine the list of installed UFW profiles.
-
 $ ufw allow OpenSSH  //  Allows SSH connections.
-
 $ ufw allow 22/tcp // We will use 22 as port to connect by ssh. The default port is 22. You may use other like 2221 or similar.
-
 $ sudo ufw allow http // This is the same as "sudo ufw allow 80/tcp"
-
 $ sudo ufw allow https // This is the same as "sudo ufw allow 443/tcp"
-
 $ ufw enable // Enable the firewall.
-
 $ ufw status // See that SSH connections are still allowed.
 ````
 
@@ -76,17 +70,18 @@ $ sudo apt install nginx
 
 ### Step 2 - Adjusting the Firewall.
 
+````
 sudo ufw app list
-
 sudo ufw allow 'Nginx Full' // This will allow ports 80 for http and 443 for https.
-
 sudo ufw status
+````
 
 ### Step 3 - Checking your Web Server.
 
+````
 systemctl status nginx
-
 curl -4 icanhazip.com  // it will give you your ip address.
+````
 
 From a browser go to:
 http://your_server_ip
@@ -94,23 +89,14 @@ http://your_server_ip
 ### Step 4 - Managing the Nginx Process.
 Now that you have your web server up and running, let’s review some basic management commands.
 
-To stop your web server, type:
-$ sudo systemctl stop nginx
-
-To start the web server when it is stopped, type:
-$ sudo systemctl start nginx
-
-To stop and then start the service again, type:
-$ sudo systemctl restart nginx
-
-If you are only making configuration changes, Nginx can often reload without dropping connections. To do this, type:
-$ sudo systemctl reload nginx
-
-By default, Nginx is configured to start automatically when the server boots. If this is not what you want, you can disable this behavior by typing:
-$ sudo systemctl disable nginx
-
-To re-enable the service to start up at boot, you can type:
-$ sudo systemctl enable nginx
+````
+$ sudo systemctl stop nginx // To stop your web server.
+$ sudo systemctl start nginx // To start the web server when it is stopped.
+$ sudo systemctl restart nginx // To stop and then start the service again.
+$ sudo systemctl reload nginx // If you are only making configuration changes, Nginx can often reload without dropping connections. 
+$ sudo systemctl disable nginx // By default, Nginx is configured to start automatically when the server boots. If this is not what you want, you can disable this behavior.
+sudo systemctl enable nginx // To re-enable the service to start up at boot.
+````
 
 ### Step 5 - Setting Up Server Blocks.
 
