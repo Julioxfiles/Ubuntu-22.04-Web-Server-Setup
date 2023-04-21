@@ -24,11 +24,17 @@ Note: You can now type sudo before commands to run them with superuser privilege
 
 ### Step 4 — Setting Up a Firewall
 $ ufw app list // examine the list of installed UFW profiles
+
 $ ufw allow OpenSSH  //  Allows SSH connections.
+
 $ ufw allow 2221/tcp // We will use 2221 as port to connect by ssh. The default port is 22.
+
 $ sudo ufw allow http // This is the same as "ufw allow 80/tcp"
+
 $ sudo ufw allow https // This is the same as "ufw allow 443/tcp"
+
 $ ufw enable // Enable the firewall
+
 $ ufw status // See that SSH connections are still allowed
 
 ### Step 5 — Enabling external access for your regular user.
@@ -40,5 +46,6 @@ Example: rsync --archive --chown=julio:julio ~/.ssh /home/julio
 ### 6.- Enter to your server again using the new user:
 
 ssh -i your_ssh_file your_new_user@your_ip_address -p your_port
+
 Example: ssh -i digital_ocean_ssh.txt julio@64.226.101.144 -p 22
 
