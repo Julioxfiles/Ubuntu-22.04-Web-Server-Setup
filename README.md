@@ -348,7 +348,7 @@ $ sudo systemctl start mariadb.
 ````
 
 
-## Step 5 You may need to create a mariadb DATABASE to store the data of your php proyect or web site.
+### Step 5 - Create a mariadb DATABASE to store the data of your php proyect or web site.
 
 Enter to mysql (mariaDB) Your dbAdmin password may be asked.
 
