@@ -406,4 +406,4 @@ Once you have use FileZila to upload your php files. You may need to apply this 
 - sudo find /var/www/your_domain -type f -exec chmod 0664 {} + (chmod cannot discriminare folders/files)
 ````
 
-If you can not enter to https://your_domain/adminer.php, you may need to download adminer.php again as described above on the Download Adminer section.
+If you can not enter to https://your_domain/adminer.php, you may need to download adminer.php again as described above in the Download Adminer section.
