@@ -437,7 +437,7 @@ Once you have use FileZila to upload your php files to /var/www/your_domain you 
 
 ### Adminer login
 
-If you can not enter to https://your_domain/adminer.php, you may need to download adminer.php again as described above in the Download Adminer section.
+Adminer is to nginx what phpmyadmin is to apache. If you can not enter to https://your_domain/adminer.php, you may need to download adminer.php again as described above in the Download Adminer section.
 
 You have to use your mysql dbAdmin and the password that you set for it. 
 
