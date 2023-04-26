@@ -435,10 +435,14 @@ Once you have use FileZila to upload your php files to /var/www/your_domain you 
 - sudo find /var/www/your_domain -type f -exec chmod 0664 {} + (chmod cannot discriminare folders/files)
 ````
 
+### Adminer login
+
 If you can not enter to https://your_domain/adminer.php, you may need to download adminer.php again as described above in the Download Adminer section.
 
-### Adminer login
-You have to use your mysql dbAdmin and the password that you set for it. Now, just learn more about adminer and how to use it at: https://www.adminer.org/
+You have to use your mysql dbAdmin and the password that you set for it. 
 
 ![image](https://user-images.githubusercontent.com/18542304/234631606-fa681802-6cb3-4c61-be47-e5fb86845c9a.png)
+
+Now, just learn more about adminer and how to use it at: https://www.adminer.org/
+
 
