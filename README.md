@@ -3,7 +3,7 @@
 Describes the linux commands needed to set up a web server on ubuntu 22.04
 We start from the idea that you already have an ssh file private key to connect to the ubuntu server where you will carry out the installation.
 
-Note: As is obvious and expected, some words like: your_server_ip, your_ssh_file, your_port, your_domain, your_new_user, dbAdmin, your_db_password and others can or should be replaced with your server connection information or each user's own passwords. It is the responsability of each user the use of this manual.
+Note: As is obvious and expected, some words like: your_server_ip, your_ssh_file, your_port, your_domain, your_new_user, dbAdmin, your_db_password and others can or should be replaced with your server connection information or data. It is the responsability of each user the use of this manual.
  
 ## *** Initial Server Setup with Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04
