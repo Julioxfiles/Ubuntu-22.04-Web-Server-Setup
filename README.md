@@ -150,7 +150,7 @@ Save and close the file by pressing Ctrl+X to exit, then when prompted to save, 
 $ sudo nano /etc/nginx/sites-available/your_domain 
 
 Now paste in the following configuration block, which is similar to the default:
-
+Note: Remember to change your_domain for the name of your domain.
 ````
 server {
   # Example PHP Nginx FPM config file 
