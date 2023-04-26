@@ -3,7 +3,7 @@
 Describes the linux commands needed to set up a web server on ubuntu 22.04
 We start from the idea that you already have an ssh file private key to connect to the ubuntu server where you will carry out the installation.
 
-Note: As is obvious and expected, some words like: your_server_ip, your_ssh_file, your_port, your_domain, your_new_user, dbAdmin, your_db_password and others can or should be replaced with your server connection information or data. It is the responsability of each user the use of this manual.
+Note: As is obvious and expected, some words like: your_server_ip, your_ssh_file, your_port, your_domain, your_new_user, dbAdmin, your_db_password and others can or should be replaced with your server connection information or data.I hope you have already purchased a domain from amazon aws, godaddy, digitalocean or any other dns or web hosting provider. Then you can replace your_domain with your actual domain. My DNS or domain name for example is latitude24.com It is the responsability of each user the use of this manual.
  
 ## *** Initial Server Setup with Ubuntu 22.04 ***
 Taken from: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04
@@ -150,7 +150,7 @@ Save and close the file by pressing Ctrl+X to exit, then when prompted to save, 
 $ sudo nano /etc/nginx/sites-available/your_domain 
 
 Now paste in the following configuration block, which is similar to the default:
-Note: Remember to change your_domain for the name of your domain.
+Note: Remember to change your_domain for the name of your domain. 
 ````
 server {
   # Example PHP Nginx FPM config file 
