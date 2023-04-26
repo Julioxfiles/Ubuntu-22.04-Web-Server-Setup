@@ -443,6 +443,7 @@ You have to use your mysql dbAdmin and the password that you set for it.
 
 ![image](https://user-images.githubusercontent.com/18542304/234631606-fa681802-6cb3-4c61-be47-e5fb86845c9a.png)
 
+
 Now, just learn more about adminer and how to use it at: https://www.adminer.org/
 
 
