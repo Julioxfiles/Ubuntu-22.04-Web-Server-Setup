@@ -401,17 +401,22 @@ $ sudo nano /etc/nginx/sites-available/your_domain
   ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 ````   
 
-# *** Download Adminer *** 
+# *** Download Adminer ***  
+Taken from: https://stackoverflow.com/questions/65053387/problem-with-adminer-php-8-0-on-ubuntu-20-04
+
 The easiest way I found to update is to still install it that way, but then use wget to download the latest version of adminer.php. So do something like this:
 
-Go to the adminer director cd /usr/share/adminer
+Go to the adminer folder
+````
+cd /usr/share/adminer
+````
 Download the latest version of adminer:
 ````
 sudo wget https://www.adminer.org/latest.php
 ````
 Then rename latest.php to /var/www/your_domain/adminer.php 
 ````
-sudo mv latest.php adminer.php
+sudo mv latest.php /var/www/your_domain/adminer.php 
 ````
 
 From a web browwer type:
