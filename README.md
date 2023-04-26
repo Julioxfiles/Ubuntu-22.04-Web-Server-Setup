@@ -1,7 +1,7 @@
 # Ubuntu-22.04-Web-Server-Setup
 ## Using nginx, php, mariadb, certbot, filezila and adminer.php to setup a web server.
 Describes the linux commands needed to set up a web server on ubuntu 22.04
-We start from the idea that you already have an ssh file private key to connect to the ubuntu server where you will carry out the installation.
+We start from the idea that you already have an ssh file private key to connect to the ubuntu server as root user where you will carry out the installation.
 
 Note: As is obvious and expected, some words like: your_server_ip, your_ssh_file, your_port, your_domain, your_new_user, dbAdmin, your_db_password and others can or should be replaced with your server connection information or data. I hope you have already purchased a domain from amazon aws, godaddy, digitalocean or any other dns or web hosting provider. And they have already provided you with all this information with which to replace the words said above. Of course, the password for your ubuntu user and mysql (mariaDB) user will have to be decided by you. This is not going to be given to you by any web service provider.
  
