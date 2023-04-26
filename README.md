@@ -404,6 +404,9 @@ $ sudo nano /etc/nginx/sites-available/your_domain
 # *** Download Adminer ***  
 Taken from: https://stackoverflow.com/questions/65053387/problem-with-adminer-php-8-0-on-ubuntu-20-04
 
+From Trevor:
+Support was added in December 2020, unfortunately only weeks after your question @The-Evil-Fox. The only problem is it seems the Ubuntu repo is not up to date so if you install via apt install adminer you'll still be on a version that doesn't support PHP 8.
+
 The easiest way I found to update is to still install it that way, but then use wget to download the latest version of adminer.php. So do something like this:
 
 Go to the adminer folder
