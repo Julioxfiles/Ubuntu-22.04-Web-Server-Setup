@@ -159,7 +159,7 @@ server {
   # Add index.php to setup Nginx, PHP & PHP-FPM config 
   index index.php index.html index.htm index.nginx-debian.html;
 
-  server_name _;
+  server_name your_domain;
 
   location / {
     try_files $uri $uri/ =404;
